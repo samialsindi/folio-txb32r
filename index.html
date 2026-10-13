@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sami Alsindi, PhD: fractional CTO and AI advisor in London. Results from energy, healthcare, FMCG, telecoms, industrial robotics and speech AI, with clients unnamed.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sami Alsindi, fractional CTO and AI advisor">
+<meta property="og:description" content="Sami Alsindi, PhD: fractional CTO and AI advisor in London. Results from energy, healthcare, FMCG, telecoms, industrial robotics and speech AI, with clients unnamed.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#F2F4F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1520" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A3CC7'/%3E%3Cpath d='M3 18 C6 6 8 6 10 16 S14 26 16 16 S20 6 22 16 S26 26 29 14' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>Sami Alsindi, fractional CTO and AI advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&amp;display=swap">
+<style>
+/* Layout: a deck of full-height slides on cool lab paper. Left-aligned on a 12-column grid,
+   one result per slide, set in wide numerals with a to-scale bar underneath. Sections carry
+   score-style rehearsal letters; the title trace is a tone with its fundamental removed. */
+:root {
+  --paper: #F2F4F3;
+  --paper-2: #E4E9E7;
+  --ink: #16202E;
+  --ink-2: #4C5767;
+  --ink-3: #7A8492;
+  --rule: #CBD2D6;
+  --accent: #2A3CC7;
+  --accent-soft: #DCE1F7;
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --gutter: clamp(16px, 5vw, 72px);
+  --bar-top: 56px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F1520;
+    --paper-2: #1A2333;
+    --ink: #E7EBF1;
+    --ink-2: #A8B2C0;
+    --ink-3: #738095;
+    --rule: #2B3547;
+    --accent: #8E9CFF;
+    --accent-soft: #1F2A57;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F1520;
+  --paper-2: #1A2333;
+  --ink: #E7EBF1;
+  --ink-2: #A8B2C0;
+  --ink-3: #738095;
+  --rule: #2B3547;
+  --accent: #8E9CFF;
+  --accent-soft: #1F2A57;
+  color-scheme: dark;
+}
+
+html { scroll-snap-type: y proximity; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+img, canvas { max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Top bar */
+.bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; gap: 16px;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) var(--gutter) 10px;
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font-size: 14px;
+}
+.bar-name { font-weight: 700; font-stretch: 112%; text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+.bar-where { display: flex; align-items: center; gap: 8px; color: var(--ink-2); margin-left: auto; min-width: 0; }
+.bar-where span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mark {
+  display: inline-grid; place-items: center; flex: none;
+  width: 1.45em; height: 1.45em; border: 1.5px solid currentColor; border-radius: 2px;
+  font-weight: 700; font-size: 13px; line-height: 1; color: var(--ink);
+}
+.bar-count { font-variant-numeric: tabular-nums; color: var(--ink-2); white-space: nowrap; }
+.bar-btn {
+  font: inherit; font-weight: 600; color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; cursor: pointer;
+}
+.bar-btn:hover { border-color: var(--ink-3); }
+.bar-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--rule); }
+.bar-progress span { display: block; height: 100%; width: 5%; background: var(--accent); transition: width 0.25s ease; }
+
+.pager { position: fixed; right: var(--gutter); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 10; display: flex; gap: 8px; }
+.pager button {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--paper); color: var(--ink); font: inherit; font-size: 18px; line-height: 1; cursor: pointer;
+}
+.pager button:hover { border-color: var(--ink-3); color: var(--accent); }
+.pager button:disabled { opacity: 0.35; cursor: default; }
+
+/* Slides */
+.slide {
+  box-sizing: border-box;
+  min-height: 100vh; min-height: 100svh;
+  padding-block: calc(var(--bar-top) + 40px + env(safe-area-inset-top, 0px)) 72px;
+  padding-inline: var(--gutter);
+  display: flex; flex-direction: column; justify-content: center;
+  scroll-snap-align: start;
+}
+.slide + .slide { border-top: 1px solid var(--rule); }
+.inner {
+  width: 100%; max-width: 1180px; margin-inline: auto;
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(16px, 2.5vw, 40px); row-gap: 22px; align-items: start;
+}
+.inner > * { grid-column: 1 / -1; min-width: 0; }
+
+.ctx { display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 14px; color: var(--ink-2); font-stretch: 88%; }
+.ctx span + span { border-left: 1px solid var(--rule); margin-left: 10px; padding-left: 10px; }
+.ctx span:first-child { color: var(--ink); font-weight: 600; }
+.headline { grid-column: 1 / span 9; font-size: clamp(24px, 3vw, 38px); line-height: 1.15; font-weight: 600; letter-spacing: -0.012em; }
+.lede { grid-column: 1 / span 8; font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); max-width: 62ch; }
+
+/* The result, set big */
+.fig {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.22em; row-gap: 0;
+  font-size: clamp(52px, 10.4vw, 150px); font-weight: 780; font-stretch: 118%;
+  letter-spacing: -0.03em; line-height: 0.98; margin-top: 6px;
+}
+.fig--long { font-size: clamp(40px, 7.2vw, 104px); }
+.fig .from { color: var(--ink-3); }
+.fig .arrow { color: var(--ink-3); font-weight: 300; font-stretch: 100%; }
+.fig .to { color: var(--accent); }
+.unit { grid-column: 1 / span 8; margin-top: -10px; font-size: clamp(18px, 1.7vw, 22px); color: var(--ink-2); }
+
+.detail { grid-column: 1 / span 7; display: grid; gap: 18px; }
+.notes { grid-column: 8 / -1; display: grid; gap: 12px; font-size: 16.5px; }
+.notes p { max-width: 46ch; }
+.stack { font-size: 14px; color: var(--ink-2); font-stretch: 90%; }
+.stack b { font-weight: 600; color: var(--ink); }
+
+/* To-scale bars: square at the baseline, rounded at the data end */
+.scale { display: grid; gap: 8px; margin: 0; }
+.scale-title { font-size: 14px; color: var(--ink-2); margin-bottom: 2px; }
+.scale-row { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); align-items: center; gap: 12px; font-size: 14px; }
+.scale-row > span:first-child { color: var(--ink-2); font-stretch: 90%; }
+.track { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.scale--pct .track { position: relative; }
+.scale--pct .track::before {
+  content: ""; position: absolute; left: 0; width: 78%; height: 14px; background: var(--paper-2); border-radius: 0 4px 4px 0;
+}
+.bar-fill {
+  position: relative; display: block; flex: none; height: 14px;
+  width: max(2px, calc(var(--v) * 78%)); border-radius: 0 4px 4px 0; background: var(--ink-3);
+}
+.bar-fill.after { background: var(--accent); }
+.scale--pct .val { position: absolute; left: calc(78% + 10px); }
+.val { font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; font-weight: 600; }
+
+.people { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.people i { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); display: block; }
+.minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.mini b { display: block; font-size: clamp(28px, 3vw, 40px); font-weight: 760; font-stretch: 115%; letter-spacing: -0.02em; line-height: 1.05; }
+.mini span { font-size: 14.5px; color: var(--ink-2); display: block; max-width: 30ch; }
+
+.swap { display: grid; gap: 10px; margin: 0; }
+.swap div { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.swap dt { font-size: 14px; color: var(--ink-2); }
+.swap dd { margin: 0; font-size: clamp(17px, 1.6vw, 20px); }
+.swap div:last-child dd { color: var(--accent); font-weight: 600; }
+
+/* Title slide */
+.slide--title .inner { row-gap: 26px; }
+.name { font-size: clamp(46px, 9vw, 132px); font-weight: 820; font-stretch: 125%; letter-spacing: -0.035em; line-height: 0.95; }
+.name small { font-size: 0.3em; font-weight: 500; font-stretch: 100%; letter-spacing: 0; color: var(--ink-2); vertical-align: 0.95em; margin-left: 0.25em; }
+.role { font-size: clamp(19px, 2vw, 26px); font-weight: 500; }
+.pitch { grid-column: 1 / span 8; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25; letter-spacing: -0.01em; max-width: 30ch; }
+.trace { display: block; width: 100%; height: 76px; }
+.trace-wrap { grid-column: 1 / span 9; display: grid; gap: 6px; }
+.trace-note { font-size: 13.5px; color: var(--ink-2); }
+.now { grid-column: 1 / span 8; color: var(--ink-2); max-width: 60ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: inherit; font-weight: 600; font-size: 15.5px; text-decoration: none; cursor: pointer;
+  padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent;
+}
+.btn:hover { color: var(--accent); border-color: var(--accent); }
+.btn--solid { background: var(--ink); color: var(--paper); }
+.btn--solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.hint { font-size: 13.5px; color: var(--ink-2); }
+
+/* Overview tiles */
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px clamp(16px, 2.5vw, 40px); margin-top: 8px; }
+.tile { display: grid; gap: 6px; align-content: start; padding-top: 14px; border-top: 1px solid var(--rule); text-decoration: none; }
+.tile b { font-size: clamp(28px, 3vw, 42px); font-weight: 760; font-stretch: 112%; letter-spacing: -0.025em; line-height: 1.02; }
+@media (min-width: 961px) { .tile b { white-space: nowrap; } }
+.tile span { font-size: 15px; color: var(--ink-2); max-width: 26ch; }
+.tile:hover b { color: var(--accent); }
+
+/* Ways of working */
+.ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px clamp(16px, 2.5vw, 40px); }
+.way h3 { font-size: 19px; font-weight: 650; line-height: 1.25; margin-bottom: 6px; }
+.way h3 span { display: block; font-size: 14px; font-weight: 500; color: var(--ink-2); font-stretch: 90%; margin-top: 2px; }
+.way p { font-size: 16px; color: var(--ink); max-width: 40ch; }
+.rules { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 44px; font-family: var(--font-serif); font-style: italic; font-size: clamp(20px, 2vw, 27px); line-height: 1.25; color: var(--accent); }
+.sectors { font-size: 15px; color: var(--ink-2); padding-top: 14px; border-top: 1px solid var(--rule); }
+
+/* Strategy cases */
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px clamp(20px, 3vw, 48px); list-style: none; margin: 0; padding: 0; }
+.cases li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 4px 14px; }
+.cases .yr { font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: 14px; padding-top: 2px; }
+.cases h3 { font-size: 17px; font-weight: 650; line-height: 1.3; }
+.cases p { grid-column: 2; font-size: 15.5px; color: var(--ink-2); max-width: 52ch; }
+
+/* Quotes */
+.quotes { columns: 3 300px; column-gap: clamp(20px, 3vw, 48px); }
+.quote { break-inside: avoid; margin: 0 0 30px; }
+.quote p { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(19px, 1.75vw, 23px); line-height: 1.38; font-optical-sizing: auto; }
+.quote footer { margin-top: 8px; font-size: 14px; color: var(--ink-2); max-width: 36ch; }
+.quote--lead p { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; }
+.hero-quote { grid-column: 1 / span 10; }
+.hero-quote p { font-family: var(--font-serif); font-style: italic; font-size: clamp(30px, 4.4vw, 60px); line-height: 1.12; letter-spacing: -0.01em; color: var(--accent); }
+.hero-quote footer { margin-top: 12px; font-size: 15px; color: var(--ink-2); }
+
+/* Writing and research */
+.groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px clamp(24px, 4vw, 64px); }
+.group h3 { font-size: 15px; font-weight: 650; padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 12px; }
+.group ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.group li { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); gap: 12px; font-size: 15.5px; line-height: 1.4; }
+.group ol { gap: 11px; }
+.group .yr { color: var(--ink-2); font-variant-numeric: tabular-nums; font-size: 14px; padding-top: 1px; }
+.group .src { display: block; color: var(--ink-2); font-size: 14px; margin-top: 2px; }
+
+/* Background */
+.bg-left { grid-column: 1 / span 6; display: grid; gap: 16px; }
+.bg-left p { max-width: 52ch; }
+.listen { display: grid; gap: 12px; padding: 18px; background: var(--paper-2); border-radius: 6px; margin-top: 6px; }
+.listen .trace { height: 64px; }
+.listen-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.listen-buttons .btn { font-size: 14.5px; padding: 8px 14px; }
+.listen-buttons .btn[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+.listen .caption { font-size: 14.5px; color: var(--ink-2); max-width: 56ch; }
+.timeline { grid-column: 8 / -1; list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.timeline li { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr); gap: 12px; font-size: 15.5px; line-height: 1.35; }
+.timeline .yr { color: var(--ink-2); font-variant-numeric: tabular-nums; font-size: 14px; padding-top: 1px; }
+.timeline b { font-weight: 600; }
+.timeline .org { color: var(--ink-2); }
+
+/* Contact */
+.email { font-size: clamp(26px, 5vw, 64px); font-weight: 760; font-stretch: 110%; letter-spacing: -0.02em; line-height: 1.05; overflow-wrap: anywhere; user-select: all; }
+.email a { text-decoration: none; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 16px; }
+.small { font-size: 14.5px; color: var(--ink-2); max-width: 64ch; }
+
+/* Contents dialog */
+dialog.contents {
+  width: min(760px, calc(100vw - 32px)); max-height: min(86vh, 900px); box-sizing: border-box;
+  padding: 26px clamp(18px, 3vw, 34px); border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--paper); color: var(--ink);
+}
+dialog.contents::backdrop { background: rgba(10, 16, 26, 0.4); background: color-mix(in srgb, var(--ink) 35%, transparent); }
+.contents-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.contents-head h2 { font-size: 22px; font-weight: 650; }
+.contents-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px; }
+.contents-sec h3 { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 650; margin-bottom: 6px; }
+.contents-sec ol { list-style: none; margin: 0; padding: 0 0 0 34px; display: grid; gap: 3px; }
+.contents-sec a { font-size: 15px; text-decoration: none; color: var(--ink-2); }
+.contents-sec a:hover, .contents-sec a[aria-current="true"] { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .headline, .lede, .unit, .detail, .notes, .pitch, .now, .trace-wrap, .bg-left, .timeline, .hero-quote { grid-column: 1 / -1; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .groups { grid-template-columns: 1fr; }
+  .cases { grid-template-columns: 1fr; }
+  .notes p { max-width: 60ch; }
+}
+@media (max-width: 640px), (max-height: 560px) {
+  html { scroll-snap-type: none; }
+  .slide { min-height: 0; padding-block: calc(var(--bar-top) + 34px + env(safe-area-inset-top, 0px)) 52px; }
+  .pager { display: none; }
+  .bar-where #section-name { display: none; }
+  .ways { grid-template-columns: 1fr; }
+  .contents-grid { grid-template-columns: 1fr; }
+  .scale-row { grid-template-columns: 5.2rem minmax(0, 1fr); }
+  .hint { display: none; }
+}
+@media (max-width: 420px) {
+  .tiles { gap: 22px 16px; }
+  .bar { gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bar-progress span { transition: none; }
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="bar-name" href="#top">Sami Alsindi</a>
+  <div class="bar-where">
+    <span class="mark" id="section-mark" aria-hidden="true">A</span>
+    <span id="section-name">Introduction</span>
+  </div>
+  <span class="bar-count" id="counter" aria-label="Slide 1 of 20">1 / 20</span>
+  <button class="bar-btn" id="open-contents" type="button" aria-haspopup="dialog" aria-controls="contents">Contents</button>
+  <span class="bar-progress" aria-hidden="true"><span id="progress"></span></span>
+</header>
+
+<main id="deck">
+
+<!-- A · Introduction -->
+<section class="slide slide--title" id="top" data-section="A" data-title="Sami Alsindi" aria-labelledby="t-name">
+  <div class="inner">
+    <h1 class="name" id="t-name">Sami Alsindi<small>PhD</small></h1>
+    <p class="role">Fractional CTO and AI advisor, London</p>
+    <p class="pitch">I help leadership teams decide what to build with AI, prove that it works, and get it into production safely.</p>
+    <div class="trace-wrap">
+      <canvas class="trace" data-trace="draw" aria-hidden="true"></canvas>
+      <p class="trace-note">Four harmonics of a 200 Hz tone, with the 200 Hz itself removed. Most people still hear a 200 Hz pitch. <a href="#background">Listen to it</a></p>
+    </div>
+    <p class="now">Co-founder and CTO of a stealth-mode regtech start-up. Available for fractional and advisory work two to three days a week.</p>
+    <div class="cta">
+      <a class="btn btn--solid" href="#results">See the results</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <p class="hint">Scroll, or use the arrow keys. Press C for contents.</p>
+  </div>
+</section>
+
+<!-- B · Results -->
+<section class="slide" id="results" data-section="B" data-title="Selected results" aria-labelledby="t-results">
+  <div class="inner">
+    <h2 class="headline" id="t-results">Selected results</h2>
+    <p class="lede">One result per slide, from systems I designed, built or led. Clients are not named.</p>
+    <div class="tiles">
+      <a class="tile" href="#w-provision"><b>£97M</b><span>of working capital released for an energy group</span></a>
+      <a class="tile" href="#w-spend"><b>$7k → $70</b><span>monthly model spend on a claims workflow</span></a>
+      <a class="tile" href="#w-accuracy"><b>95%</b><span>claims accuracy, with people on 5% of cases</span></a>
+      <a class="tile" href="#w-recall"><b>£300k</b><span>a year saved on product recalls</span></a>
+      <a class="tile" href="#w-team"><b>1 month</b><span>ahead of every other team, with a team of three</span></a>
+      <a class="tile" href="#w-function"><b>0 → 13</b><span>people in a function I built from scratch</span></a>
+      <a class="tile" href="#w-vision"><b>30% → 95%</b><span>detection accuracy on a live conveyor</span></a>
+      <a class="tile" href="#w-voice"><b>5 minutes</b><span>of phone audio to clone a voice</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-provision" data-section="B" data-title="£97M released" aria-labelledby="t-provision">
+  <div class="inner">
+    <p class="ctx"><span>Inawisdom</span><span>2018–19</span><span>FTSE 100 energy group</span></p>
+    <h2 class="headline" id="t-provision">Released £97M of working capital in a four-week engagement</h2>
+    <p class="fig"><span class="from">£100M</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">£3M</span></p>
+    <p class="unit">bad-debt provision, once the new model was in place</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="Bad-debt provision: £100M before, £3M after">
+        <div class="scale-row" title="Before: £100M"><span>Before</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">£100M</span></span></div>
+        <div class="scale-row" title="After: about £3M"><span>After</span><span class="track"><span class="bar-fill after" style="--v:0.03"></span><span class="val">£3M</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>I built a predictive bad-debt model that the energy regulator, Ofgem, approved. It let the client cut its provision from £100M to about £3M.</p>
+      <p class="stack"><b>Built with</b> Amazon SageMaker and Python</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-spend" data-section="B" data-title="$7k to $70 a month" aria-labelledby="t-spend">
+  <div class="inner">
+    <p class="ctx"><span>TQA</span><span>2024–25</span><span>US healthcare claims</span></p>
+    <h2 class="headline" id="t-spend">Cut a claims model’s running cost by 99%, and made it more accurate</h2>
+    <p class="fig"><span class="from">$7,000</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">$70</span></p>
+    <p class="unit">monthly model spend</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="Monthly model spend: $7,000 before, $70 after">
+        <div class="scale-row" title="Before: $7,000 a month"><span>GPT-4o</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">$7,000</span></span></div>
+        <div class="scale-row" title="After: $70 a month"><span>XGBoost</span><span class="track"><span class="bar-fill after" style="--v:0.01"></span><span class="val">$70</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>I replaced a GPT-4o classifier with a purpose-built XGBoost model on Azure ML, called from the client’s existing UiPath workflow. It beat the accuracy of the model it replaced.</p>
+      <p class="stack"><b>Built with</b> XGBoost, Azure ML and UiPath</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-accuracy" data-section="B" data-title="95% accuracy, 5% touch rate" aria-labelledby="t-accuracy">
+  <div class="inner">
+    <p class="ctx"><span>TQA</span><span>2024–25</span><span>The same claims workflow</span></p>
+    <h2 class="headline" id="t-accuracy">Raised claims accuracy to 95% while people handled 5% of cases</h2>
+    <p class="fig"><span class="from">80%</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">95%</span></p>
+    <p class="unit">claims accuracy</p>
+    <div class="detail">
+      <div class="scale scale--pct" role="img" aria-label="Accuracy rose from 80% to 95%">
+        <p class="scale-title">Accuracy</p>
+        <div class="scale-row" title="Before: 80%"><span>Before</span><span class="track"><span class="bar-fill" style="--v:0.8"></span><span class="val">80%</span></span></div>
+        <div class="scale-row" title="After: 95%"><span>After</span><span class="track"><span class="bar-fill after" style="--v:0.95"></span><span class="val">95%</span></span></div>
+      </div>
+      <div class="scale scale--pct" role="img" aria-label="Human touch rate fell from 60% to 5%">
+        <p class="scale-title">Claims needing a person</p>
+        <div class="scale-row" title="Before: 60%"><span>Before</span><span class="track"><span class="bar-fill" style="--v:0.6"></span><span class="val">60%</span></span></div>
+        <div class="scale-row" title="After: 5%"><span>After</span><span class="track"><span class="bar-fill after" style="--v:0.05"></span><span class="val">5%</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>Retrieval decided which claims needed a person at all, instead of answering questions. The client put the team time it freed at over $300k a year.</p>
+      <p class="stack"><b>Built with</b> retrieval-augmented generation and a React prototype on the Microsoft stack</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-recall" data-section="B" data-title="£300k a year on recalls" aria-labelledby="t-recall">
+  <div class="inner">
+    <p class="ctx"><span>TQA</span><span>2024–25</span><span>Major FMCG brand</span></p>
+    <h2 class="headline" id="t-recall">Replaced a recall team with an agentic system that is still in production</h2>
+    <p class="fig"><span class="to">£300k</span></p>
+    <p class="unit">saved each year, approximately</p>
+    <div class="detail">
+      <dl class="swap">
+        <div><dt>Before</dt><dd>A temporary third-party team, stood up for every recall</dd></div>
+        <div><dt>After</dt><dd>A self-serve agentic system that runs each recall end to end</dd></div>
+      </dl>
+    </div>
+    <div class="notes">
+      <p>Agents on AWS handle the cases, write into Salesforce over MCP, and use image checks to catch faked proof-of-recall photos. Evidence is archived automatically.</p>
+      <p class="stack"><b>Built with</b> LangGraph, Model Context Protocol, Salesforce and AWS</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-team" data-section="B" data-title="A month ahead with three people" aria-labelledby="t-team">
+  <div class="inner">
+    <p class="ctx"><span>QX Consulting</span><span>2026</span><span>PE-backed UK telecoms technology provider</span></p>
+    <h2 class="headline" id="t-team">Took a team of three from three months behind schedule to first past the milestone</h2>
+    <p class="fig"><span class="to">1 month</span></p>
+    <p class="unit">ahead of every other team at the Foundations milestone</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="Team size: other teams had ten or more people, mine had three">
+        <p class="scale-title">Team size</p>
+        <div class="scale-row" title="Other teams: ten or more people"><span>Other teams</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">10+</span></span></div>
+        <div class="scale-row" title="My team: three people, including me"><span>My team</span><span class="track"><span class="bar-fill after" style="--v:0.3"></span><span class="val">3</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>For three months I was architect, product owner, technical lead and project manager on an agentic contact-centre platform built to handle a billion minutes a year.</p>
+      <p>Claude Code skills and hooks reconciled plans, tickets, code and meeting transcripts every day, so status reports showed what was really happening.</p>
+      <p class="stack"><b>Built with</b> LangGraph, MCP, Amazon Bedrock, Kafka, Redis and Kubernetes</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-function" data-section="B" data-title="A function from 0 to 13" aria-labelledby="t-function">
+  <div class="inner">
+    <p class="ctx"><span>GlobalLogic (Hitachi)</span><span>2021–24</span><span>Head of Data Science and MLOps</span></p>
+    <h2 class="headline" id="t-function">Built a data science and MLOps function from nothing</h2>
+    <p class="fig"><span class="from">0</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">13</span></p>
+    <p class="unit">people, across strategy, go-to-market, IP and delivery</p>
+    <div class="detail">
+      <div class="people" role="img" aria-label="Thirteen people"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="minis">
+        <p class="mini"><b>300,000</b><span>potential users of the group-wide LLMOps platform I was product owner for</span></p>
+        <p class="mini"><b>300</b><span>people on the generative AI programme my seven-person team anchored</span></p>
+      </div>
+    </div>
+    <div class="notes">
+      <p>I launched a Data Science as a Service offer and the go-to-market behind it, and supported presales directly. The LLMOps platform served every Hitachi group company.</p>
+      <p class="stack"><b>Built with</b> Azure, multi-cloud MLOps and a lot of hiring</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-vision" data-section="B" data-title="30% to 95% detection" aria-labelledby="t-vision">
+  <div class="inner">
+    <p class="ctx"><span>Sindicorp, my consultancy</span><span>2025–26</span><span>UK e-waste and metals recycler</span></p>
+    <h2 class="headline" id="t-vision">Took a recycling robot’s detection accuracy from 30% to 95%</h2>
+    <p class="fig"><span class="from">30%</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">95%</span></p>
+    <p class="unit">detection accuracy on a moving conveyor</p>
+    <div class="detail">
+      <div class="scale scale--pct" role="img" aria-label="Detection accuracy rose from 30% to 95%">
+        <div class="scale-row" title="Before: 30%"><span>Before</span><span class="track"><span class="bar-fill" style="--v:0.3"></span><span class="val">30%</span></span></div>
+        <div class="scale-row" title="After: 95%"><span>After</span><span class="track"><span class="bar-fill after" style="--v:0.95"></span><span class="val">95%</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>Computer vision that finds target vapes on the conveyor and sends pick coordinates to a robotic suction arm. The jump came from finding and fixing cross-contaminated training labels.</p>
+      <p>It runs offline and in real time, because the plant has no reliable internet.</p>
+      <p class="stack"><b>Built with</b> YOLOv11 and Python, with a CI-tested codebase</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-denials" data-section="B" data-title="15% fewer first-time denials" aria-labelledby="t-denials">
+  <div class="inner">
+    <p class="ctx"><span>TQA</span><span>2024–25</span><span>US children’s hospital</span></p>
+    <h2 class="headline" id="t-denials">Found a 15% cut in first-time claim denials</h2>
+    <p class="fig"><span class="to">15%</span></p>
+    <p class="unit">fewer first-time denials, on a $200M-a-year denials problem</p>
+    <div class="detail">
+      <div class="scale scale--pct" role="img" aria-label="A 15% reduction in first-time denials">
+        <div class="scale-row" title="15% of first-time denials"><span>Reduction</span><span class="track"><span class="bar-fill after" style="--v:0.15"></span><span class="val">15%</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>A digital twin of the claims process. I compared denied claims with approved counterparts to isolate what drives rejection, then ran counterfactuals to find the fixes.</p>
+      <p>Delivered in a HIPAA-compliant, air-gapped Databricks environment, with no GenAI assistance.</p>
+      <p class="stack"><b>Built with</b> Databricks, Python and counterfactual analysis</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-records" data-section="B" data-title="150M records to 65M people" aria-labelledby="t-records">
+  <div class="inner">
+    <p class="ctx"><span>GlobalLogic</span><span>2021–24</span><span>UK credit-reference agency</span></p>
+    <h2 class="headline" id="t-records">Resolved 150 million credit records to 65 million people</h2>
+    <p class="fig"><span class="from">150M</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">65M</span></p>
+    <p class="unit">records, matched to the real people behind them</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="150 million records resolved to 65 million people">
+        <div class="scale-row" title="150 million records"><span>Records</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">150M</span></span></div>
+        <div class="scale-row" title="65 million people"><span>People</span><span class="track"><span class="bar-fill after" style="--v:0.433"></span><span class="val">65M</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>An ensemble of fuzzy matching, phonetic matching and demographic migration patterns decides which records belong to the same person.</p>
+      <p class="stack"><b>Built with</b> Python and entity-resolution models</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-voice" data-section="B" data-title="A voice from five minutes of audio" aria-labelledby="t-voice">
+  <div class="inner">
+    <p class="ctx"><span>AudioStack</span><span>2020–21</span><span>Speech-synthesis start-up</span></p>
+    <h2 class="headline" id="t-voice">Cloned a voice from five minutes of phone audio</h2>
+    <p class="fig fig--long"><span class="from">20 hours</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">5 minutes</span></p>
+    <p class="unit">of recordings needed for each voice</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="Audio needed per voice: about 20 hours of studio recording before, 5 minutes of phone audio after">
+        <div class="scale-row" title="Before: about 20 hours of studio recording"><span>Studio</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">20 hours</span></span></div>
+        <div class="scale-row" title="After: 5 minutes of phone audio"><span>Phone</span><span class="track"><span class="bar-fill after" style="--v:0.0042"></span><span class="val">5 minutes</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>I was product owner and builder of user-level voice cloning: fine-tuned text-to-speech that needs no transcript.</p>
+      <p>Prototype in four weeks, 99% less manual effort per voice, and about an 18-month head start on a similar Amazon launch.</p>
+      <p class="stack"><b>Built with</b> PyTorch, pydub, AWS Lambda and Glue, Snowflake and dbt</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-forecast" data-section="B" data-title="Two weeks to ten minutes" aria-labelledby="t-forecast">
+  <div class="inner">
+    <p class="ctx"><span>Inawisdom</span><span>2019</span><span>UK energy supplier</span></p>
+    <h2 class="headline" id="t-forecast">Cut forecasting data preparation from two weeks to ten minutes</h2>
+    <p class="fig fig--long"><span class="from">2 weeks</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only">to</span><span class="to">10 minutes</span></p>
+    <p class="unit">of data preparation</p>
+    <div class="detail">
+      <div class="scale" role="img" aria-label="Data preparation: about two weeks before, about ten minutes after">
+        <div class="scale-row" title="Before: about two weeks"><span>Before</span><span class="track"><span class="bar-fill" style="--v:1"></span><span class="val">2 weeks</span></span></div>
+        <div class="scale-row" title="After: about ten minutes"><span>After</span><span class="track"><span class="bar-fill after" style="--v:0.0005"></span><span class="val">10 minutes</span></span></div>
+      </div>
+    </div>
+    <div class="notes">
+      <p>Anomaly detection across a retail energy customer base, flagging faulty meters and changes of tenancy. Moving the pipeline from SageMaker to Amazon Forecast made the difference.</p>
+      <p><a href="https://aws.amazon.com/blogs/apn/introducing-amazon-forecast-and-a-look-into-the-future-of-time-series-prediction/" target="_blank" rel="noopener">I wrote it up for the AWS Partner Network Blog</a></p>
+      <p class="stack"><b>Built with</b> Amazon Forecast (DeepAR+), SageMaker and Random Cut Forest</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="w-health" data-section="B" data-title="A health-AI start-up" aria-labelledby="t-health">
+  <div class="inner">
+    <p class="ctx"><span>MediConnect Research</span><span>2019–22</span><span>Co-founder and CTO</span></p>
+    <h2 class="headline" id="t-health">Co-founded a health-AI start-up and built tools clinicians asked for</h2>
+    <blockquote class="hero-quote">
+      <p>“That’s incredible, I wish I could do this in my current EHR system.”</p>
+      <footer>A clinician, seeing per-patient kidney-function trends for the first time</footer>
+    </blockquote>
+    <div class="detail">
+      <p>SBRI-funded work, Phases 1 and 2, to digitise a Scottish health board’s heart-failure audit: models for heart-failure subtype, a serverless pipeline and a dashboard tested with clinicians, all inside a secure data safe haven.</p>
+    </div>
+    <div class="notes">
+      <p>I also built a Kinect fall-detection prototype for care homes, a finalist in a Korean trade agency’s start-up programme.</p>
+      <p>Before that, freelancing for a trial-matching start-up, I built site-prediction models that reached 75% accuracy across 6,345 patients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- C · How I work -->
+<section class="slide" id="how" data-section="C" data-title="How I work" aria-labelledby="t-how">
+  <div class="inner">
+    <h2 class="headline" id="t-how">How I work</h2>
+    <p class="lede">From a few days a week to a fixed-scope build.</p>
+    <ul class="rules" aria-label="Two rules I work by">
+      <li>If you can’t measure it, don’t do it.</li>
+      <li>Only build a proof of concept with a clear path to production.</li>
+    </ul>
+    <div class="ways">
+      <div class="way"><h3>Fractional CTO or Head of AI<span>Two to three days a week</span></h3><p>I set the technical strategy, make the architecture calls, hire the first AI team and support the board and investors.</p></div>
+      <div class="way"><h3>Discovery<span>One to three weeks</span></h3><p>I map how the process really works, where AI pays and where it doesn’t, and say so when a problem isn’t agentic.</p></div>
+      <div class="way"><h3>Proof to production<span>Four to eight weeks</span></h3><p>A working system, judged on your own data or replayed history rather than a demo, and built to your regulator’s constraints from day one.</p></div>
+      <div class="way"><h3>Assurance and governance<span>Alongside any build</span></h3><p>Evaluation suites, guardrails, model inventories and decision logs that a second line or a regulator will accept.</p></div>
+      <div class="way"><h3>Investment cases and due diligence<span>For boards and investors</span></h3><p>Platform choices, build versus buy, and data-platform cases for private equity-backed businesses with an exit window.</p></div>
+      <div class="way"><h3>AI-native delivery<span>For your engineering team</span></h3><p>Teams that ship with Claude Code, with plans, tickets, code and transcripts reconciled daily so status is never guesswork.</p></div>
+    </div>
+    <p class="sectors">Sectors so far: energy, healthcare and life sciences, financial services, FMCG, telecoms, industrial robotics, retail and pricing, speech and audio. Regulated work under GDPR, the EU AI Act, PCI DSS and HIPAA.</p>
+  </div>
+</section>
+
+<!-- D · Strategy cases -->
+<section class="slide" id="cases" data-section="D" data-title="Strategy cases" aria-labelledby="t-cases">
+  <div class="inner">
+    <h2 class="headline" id="t-cases">Strategy cases</h2>
+    <p class="lede">Cases set by leadership teams at consultancies and technology firms. For each one I wrote and presented the strategy. Organisations are not named.</p>
+    <ol class="cases">
+      <li><span class="yr">2026</span><h3>A private equity-backed holiday-lettings group with an 18-month exit</h3><p>No big-bang migration: data stays at rest behind Iceberg tables, a reversible Snowflake versus Fabric bake-off, then value in order from KPI lineage to guest identity to dynamic pricing.</p></li>
+      <li><span class="yr">2026</span><h3>An insurance-broker consolidator with about 50 acquired brands</h3><p>Join the brands’ data without merging the companies, using record links that carry their own confidence, with governance built in and handover to the client’s team by the third quarter.</p></li>
+      <li><span class="yr">2026</span><h3>A 400-project portfolio office whose status reports can’t be trusted</h3><p>An agent that reconciles plans, risk logs, tickets, finance and meeting transcripts daily and grades each status A to D. Copilot as the front door, not the engine, and a 12-week path through approvals.</p></li>
+      <li><span class="yr">2026</span><h3>A subscription-billing platform</h3><p>A contract-to-billing agent designed to set up 85–95% of contracts within two to three days, with a reviewer queue and accuracy measured against a golden set.</p></li>
+      <li><span class="yr">2025</span><h3>A climate-risk analytics scale-up</h3><p>License a US hail model rather than build one, entering the US market six months sooner, plus a quick-win model and a two-hire plan.</p></li>
+      <li><span class="yr">2025</span><h3>A public-sector digital consultancy</h3><p>An AI practice strategy that wins against AI-lab consultancies on trust, subject expertise and responsible AI.</p></li>
+      <li><span class="yr">2024</span><h3>A regional digital consultancy</h3><p>An AI customer-service roadmap with ROI at each phase, and a three-month plan to launch an AI practice with a priced offer ladder.</p></li>
+      <li><span class="yr">2023</span><h3>A commodities price-data company</h3><p>Accuracy metrics for forward-curve forecasts, and unsupervised discovery of patterns in unparsed trader messages.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- E · In their words -->
+<section class="slide" id="words" data-section="E" data-title="In their words" aria-labelledby="t-words">
+  <div class="inner">
+    <h2 class="headline" id="t-words">In their words</h2>
+    <p class="lede">Founders, clinicians and leadership panels, quoted from recordings and written feedback. Names are withheld.</p>
+    <div class="quotes">
+      <blockquote class="quote quote--lead"><p>“That’s really good, that sounds very sensible.”</p><footer>Founders of a regtech start-up, on my technical strategy, before they appointed me CTO</footer></blockquote>
+      <blockquote class="quote"><p>“An excellent discussion all-round with many highlights… your technical skills, leadership and passion for this area came through in abundance.”</p><footer>Leadership panel, public-sector digital consultancy, in written feedback</footer></blockquote>
+      <blockquote class="quote"><p>“It was clear you are very strong at both viewing the big picture and zooming-in to more granular points.”</p><footer>Data science team, commodities price-data company, in written feedback</footer></blockquote>
+      <blockquote class="quote"><p>“We love the conversation around… your whiteboard thinking and the strategic side.”</p><footer>The same founders</footer></blockquote>
+      <blockquote class="quote"><p>“That’s incredible, I wish I could do this in my current EHR system.”</p><footer>A clinician, on a heart-failure audit dashboard</footer></blockquote>
+      <blockquote class="quote"><p>“Brilliant… that’s really good.”</p><footer>Panel at an AI consultancy, on a portfolio-assurance agent</footer></blockquote>
+      <blockquote class="quote"><p>“A lot of bits I did like in there… Really enjoyed the conversation.”</p><footer>Data and AI practice leadership, digital consultancy, on a data-platform investment case</footer></blockquote>
+      <blockquote class="quote"><p>“…ability to quickly build trust with others… knack for navigating challenging situations.”</p><footer>Leadership team, regional digital consultancy, in written feedback</footer></blockquote>
+      <blockquote class="quote"><p>“It would be great to see a demo.”</p><footer>A member of an AI leaders’ roundtable, on my small-language-model gateway</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- F · Writing, talks and research -->
+<section class="slide" id="writing" data-section="F" data-title="Writing, talks and research" aria-labelledby="t-writing">
+  <div class="inner">
+    <h2 class="headline" id="t-writing">Writing, talks and research</h2>
+    <div class="groups">
+      <div class="group">
+        <h3>Podcasts and interviews</h3>
+        <ol>
+          <li><span class="yr">2026</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7436749903147732992/" target="_blank" rel="noopener">The Databricks Diaries</a><span class="src">Podcast on why so many AI pilots never reach production</span></span></li>
+          <li><span class="yr">2024</span><span><a href="https://www.alooba.com/podcasts/objective-hiring/ep3-sami-alsindi/" target="_blank" rel="noopener">Alooba Objective Hiring, episode 3</a><span class="src">Podcast on hiring for AI roles in the generative AI era</span></span></li>
+          <li><span class="yr">2024</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7201895582699765760/" target="_blank" rel="noopener">FintelligenX market view</a><span class="src">Interview on the future of banking with generative AI</span></span></li>
+          <li><span class="yr">2023</span><span><a href="https://evolutionjobs.com/exchange/evo-inspires-sami-alsindi-head-of-data-science-globallogic/" target="_blank" rel="noopener">Evo Inspires</a><span class="src">Video interview, as Head of Data Science at GlobalLogic</span></span></li>
+          <li><span class="yr">2022</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:6916692944326434816/" target="_blank" rel="noopener">Tech³Podcast</a><span class="src">On GlobalLogic’s data science team and its pet-welfare project</span></span></li>
+        </ol>
+      </div>
+      <div class="group">
+        <h3>Talks and workshops</h3>
+        <ol>
+          <li><span class="yr">2023</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7130658090722455555/" target="_blank" rel="noopener">Innovating industries with AI by converging OT and IT data</a><span class="src">Hitachi showcase video, Microsoft Ignite</span></span></li>
+          <li><span class="yr">2023</span><span>AWS machine learning immersion days<span class="src">Designed with my team for a UK bank’s data scientists and engineers</span></span></li>
+          <li><span class="yr">2022</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:6929409611422707712/" target="_blank" rel="noopener">AWS Summit London</a><span class="src">Talk on an NLP breed classifier that helps a pet-welfare not-for-profit track online animal sales</span></span></li>
+          <li><span class="yr">2021–24</span><span>Code your first ML model<span class="src">Workshops I designed and ran for clients and teams</span></span></li>
+          <li><span class="yr">2020</span><span>How to replicate people’s voices<span class="src">Data science meetup talk</span></span></li>
+        </ol>
+      </div>
+      <div class="group">
+        <h3>Writing</h3>
+        <ol>
+          <li><span class="yr">2026</span><span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7434970418232492034/" target="_blank" rel="noopener">Letter to Private Eye</a><span class="src">On how AI works, and what it does and doesn’t do</span></span></li>
+          <li><span class="yr">2022</span><span><a href="https://www.linkedin.com/pulse/attending-pydata-london-exec-vs-non-exec-sami-alsindi-phd" target="_blank" rel="noopener">Attending PyData London as an exec versus a non-exec</a><span class="src">LinkedIn article</span></span></li>
+          <li><span class="yr">2019</span><span><a href="https://aws.amazon.com/blogs/apn/introducing-amazon-forecast-and-a-look-into-the-future-of-time-series-prediction/" target="_blank" rel="noopener">Introducing Amazon Forecast and a look into the future of time series prediction</a><span class="src">AWS Partner Network Blog</span></span></li>
+        </ol>
+      </div>
+      <div class="group">
+        <h3>Research</h3>
+        <ol>
+          <li><span class="yr">2021</span><span><a href="https://patents.google.com/patent/WO2021240174A1/en" target="_blank" rel="noopener">Physiological sensing</a><span class="src">Published patent application with Huma, WO 2021/240174</span></span></li>
+          <li><span class="yr">Thesis</span><span><a href="https://www.repository.cam.ac.uk/handle/1810/270116" target="_blank" rel="noopener">Temporal coding of the periodicity of monaural and binaural complex tones in the guinea pig auditory brainstem</a><span class="src">PhD thesis, University of Cambridge</span></span></li>
+          <li><span class="yr">2018</span><span><a href="https://doi.org/10.3813/AAA.919240" target="_blank" rel="noopener">The responses of single units to simple and complex sounds from the superior olivary complex of the guinea pig</a><span class="src">Acta Acustica united with Acustica. Alsindi, Patterson, Sayles and Winter</span></span></li>
+          <li><span class="yr">2017</span><span><a href="https://doi.org/10.1007/s10162-017-0636-6" target="_blank" rel="noopener">Effect of context on the contribution of individual harmonics to residue pitch</a><span class="src">JARO 18(6). Gockel, Alsindi, Hardy and Carlyon</span></span></li>
+          
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- G · Background -->
+<section class="slide" id="background" data-section="G" data-title="Background" aria-labelledby="t-background">
+  <div class="inner">
+    <h2 class="headline" id="t-background">From auditory neuroscience to production AI</h2>
+    <div class="bg-left">
+      <p>PhD in auditory neuroscience at the University of Cambridge on an MRC scholarship, after an MA in Natural Sciences there. I’ve written software for 13 years, starting with the signal processing and stimulus code for that research.</p>
+      <div class="listen">
+        <canvas class="trace" data-trace="static" aria-hidden="true"></canvas>
+        <div class="listen-buttons">
+          <button class="btn" type="button" data-play="complex" aria-pressed="false">Play the four harmonics</button>
+          <button class="btn" type="button" data-play="pure" aria-pressed="false">Play a 200 Hz tone</button>
+        </div>
+        <p class="caption">Harmonics 3 to 6 of 200 Hz: 600, 800, 1,000 and 1,200 Hz. There is no energy at 200 Hz, yet the pattern repeats every 5 ms and most people hear a 200 Hz pitch. My research looked at how we hear pitch in sounds like this, from single neurons to listeners.</p>
+      </div>
+    </div>
+    <ol class="timeline" aria-label="Career">
+      <li><span class="yr">2026–</span><span><b>Co-founder and CTO</b> <span class="org">stealth-mode regtech start-up</span></span></li>
+      <li><span class="yr">2026</span><span><b>Head of Applied AI Engineering</b> <span class="org">QX Consulting</span></span></li>
+      <li><span class="yr">2024–25</span><span><b>Director of AI</b> <span class="org">TQA</span></span></li>
+      <li><span class="yr">2021–24</span><span><b>Head of Data Science and MLOps</b> <span class="org">GlobalLogic (Hitachi)</span></span></li>
+      <li><span class="yr">2020–21</span><span><b>Senior R&amp;D Engineer, ML</b> <span class="org">AudioStack</span></span></li>
+      <li><span class="yr">2019–22</span><span><b>Co-founder and CTO</b> <span class="org">MediConnect Research</span></span></li>
+      <li><span class="yr">2019–20</span><span><b>Machine Learning Engineer</b> <span class="org">Huma</span></span></li>
+      <li><span class="yr">2018–19</span><span><b>Senior Data Scientist</b> <span class="org">Inawisdom (Cognizant)</span></span></li>
+      <li><span class="yr">2018</span><span><b>Machine Learning Engineer</b> <span class="org">CTMA</span></span></li>
+      <li><span class="yr">2013–17</span><span><b>PhD, auditory neuroscience</b> <span class="org">University of Cambridge</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- H · Contact -->
+<section class="slide" id="contact" data-section="H" data-title="Work with me" aria-labelledby="t-contact">
+  <div class="inner">
+    <h2 class="headline" id="t-contact">Work with me</h2>
+    <p class="lede">I’m taking on fractional CTO, advisory and build engagements, two to three days a week, through my consultancy, Sindicorp.</p>
+    <p class="email"><a href="mailto:sami.alsindi@gmail.com" id="email-text">sami.alsindi@gmail.com</a></p>
+    <div class="cta">
+      <button class="btn btn--solid" type="button" id="copy-email" data-copy="sami.alsindi@gmail.com">Copy email address</button>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/samialsindi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samialsindi" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=1XGv6yQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://aws.amazon.com/blogs/apn/introducing-amazon-forecast-and-a-look-into-the-future-of-time-series-prediction/" target="_blank" rel="noopener">AWS blog post</a>
+    </div>
+    <p class="small">Based in London. Outside work I’m a percussionist and timpanist, and I played at the 2026 BBC Proms.</p>
+  </div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides">
+  <button type="button" id="prev" aria-label="Previous slide">↑</button>
+  <button type="button" id="next" aria-label="Next slide">↓</button>
+</nav>
+
+<dialog class="contents" id="contents" aria-labelledby="contents-title">
+  <div class="contents-head">
+    <h2 id="contents-title">Contents</h2>
+    <button class="bar-btn" type="button" id="close-contents">Close</button>
+  </div>
+  <div class="contents-grid" id="contents-grid"></div>
+</dialog>
+
+<script>
+(() => {
+  const SECTIONS = { A: 'Introduction', B: 'Results', C: 'How I work', D: 'Strategy cases', E: 'In their words', F: 'Writing and research', G: 'Background', H: 'Contact' };
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const counter = document.getElementById('counter');
+  const mark = document.getElementById('section-mark');
+  const secName = document.getElementById('section-name');
+  const progress = document.getElementById('progress');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const dialog = document.getElementById('contents');
+  const grid = document.getElementById('contents-grid');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+
+  function setCurrent(i) {
+    if (i < 0 || i >= total) return;
+    current = i;
+    const s = slides[i];
+    const sec = s.dataset.section;
+    mark.textContent = sec;
+    secName.textContent = SECTIONS[sec] || '';
+    counter.textContent = (i + 1) + ' / ' + total;
+    counter.setAttribute('aria-label', 'Slide ' + (i + 1) + ' of ' + total);
+    progress.style.width = ((i + 1) / total * 100) + '%';
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === total - 1;
+    grid.querySelectorAll('a').forEach(a => a.setAttribute('aria-current', a.dataset.index === String(i) ? 'true' : 'false'));
+  }
+
+  function go(i) {
+    const target = slides[Math.max(0, Math.min(total - 1, i))];
+    target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setCurrent(slides.indexOf(e.target)); });
+    }, { rootMargin: '-45% 0px -54% 0px', threshold: 0 });
+    slides.forEach(s => io.observe(s));
+  }
+
+  // Contents, built from the slides themselves
+  const bySection = {};
+  slides.forEach((s, i) => { (bySection[s.dataset.section] = bySection[s.dataset.section] || []).push([s, i]); });
+  Object.keys(SECTIONS).forEach(key => {
+    if (!bySection[key]) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'contents-sec';
+    const h = document.createElement('h3');
+    const m = document.createElement('span');
+    m.className = 'mark'; m.textContent = key; m.setAttribute('aria-hidden', 'true');
+    h.append(m, document.createTextNode(SECTIONS[key]));
+    const ol = document.createElement('ol');
+    bySection[key].forEach(([s, i]) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + s.id; a.dataset.index = String(i); a.textContent = s.dataset.title;
+      a.addEventListener('click', ev => { ev.preventDefault(); dialog.close(); go(i); });
+      li.append(a); ol.append(li);
+    });
+    wrap.append(h, ol); grid.append(wrap);
+  });
+
+  function openContents() { if (!dialog.open) { try { dialog.showModal(); } catch (e) { dialog.setAttribute('open', ''); } } }
+  document.getElementById('open-contents').addEventListener('click', openContents);
+  document.getElementById('close-contents').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+  prevBtn.addEventListener('click', () => go(current - 1));
+  nextBtn.addEventListener('click', () => go(current + 1));
+
+  // In-page links scroll the same way the keys do
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const idx = slides.findIndex(s => s.id === id);
+    if (idx < 0 || a.closest('#contents')) return;
+    a.addEventListener('click', ev => { ev.preventDefault(); go(idx); });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || dialog.open) return;
+    const t = e.target;
+    const interactive = t && t.closest && t.closest('button, a, input, textarea, select, [contenteditable="true"]');
+    switch (e.key) {
+      case 'ArrowDown': case 'ArrowRight': case 'PageDown': case 'j':
+        e.preventDefault(); go(current + 1); break;
+      case 'ArrowUp': case 'ArrowLeft': case 'PageUp': case 'k':
+        e.preventDefault(); go(current - 1); break;
+      case ' ':
+        if (interactive) return; e.preventDefault(); go(current + (e.shiftKey ? -1 : 1)); break;
+      case 'Home': if (interactive) return; e.preventDefault(); go(0); break;
+      case 'End': if (interactive) return; e.preventDefault(); go(total - 1); break;
+      case 'c': case 'C': if (interactive && t.matches('input, textarea')) return; e.preventDefault(); openContents(); break;
+    }
+  });
+
+  setCurrent(0);
+
+  // The trace: harmonics 3 to 6 of a tone whose fundamental is missing
+  const traces = Array.from(document.querySelectorAll('canvas[data-trace]'));
+  function color(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#2A3CC7'; }
+  function draw(canvas, amount) {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const mid = h * 0.58;
+    ctx.strokeStyle = color('--rule'); ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, mid); ctx.lineTo(w, mid); ctx.stroke();
+    const periods = w < 520 ? 3 : w < 900 ? 5 : 7;
+    const steps = Math.max(240, Math.round(w * 1.5));
+    const last = Math.round(steps * amount);
+    ctx.strokeStyle = color('--accent'); ctx.lineWidth = 1.6; ctx.lineJoin = 'round';
+    ctx.beginPath();
+    for (let i = 0; i <= last; i++) {
+      const x = i / steps * w;
+      const phase = i / steps * periods * 2 * Math.PI;
+      let y = 0;
+      for (let n = 3; n <= 6; n++) y += Math.cos(n * phase);
+      const py = mid - (y / 4) * (h * 0.52);
+      if (i === 0) ctx.moveTo(x, py); else ctx.lineTo(x, py);
+    }
+    ctx.stroke();
+  }
+  const drawn = new WeakMap();
+  function redrawAll() { traces.forEach(c => draw(c, drawn.get(c) ?? 1)); }
+  traces.forEach(c => {
+    if (c.dataset.trace === 'draw' && !reduceMotion.matches) {
+      const start = performance.now(), dur = 1600;
+      drawn.set(c, 0);
+      const step = now => {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        drawn.set(c, eased); draw(c, eased);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    } else {
+      drawn.set(c, 1); draw(c, 1);
+    }
+  });
+  if ('ResizeObserver' in window) { const ro = new ResizeObserver(redrawAll); traces.forEach(c => ro.observe(c)); }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', redrawAll);
+  new MutationObserver(redrawAll).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  // Listening demo, started by a button press
+  let audio = null, live = [];
+  function stopAll() { live.forEach(o => { try { o.stop(); } catch (e) {} }); live = []; }
+  document.querySelectorAll('[data-play]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      try { audio = audio || new AC(); } catch (e) { return; }
+      if (audio.state === 'suspended') audio.resume();
+      stopAll();
+      document.querySelectorAll('[data-play]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      const t0 = audio.currentTime + 0.02, len = 1.6;
+      const master = audio.createGain();
+      master.gain.setValueAtTime(0, t0);
+      master.gain.linearRampToValueAtTime(1, t0 + 0.05);
+      master.gain.setValueAtTime(1, t0 + len - 0.2);
+      master.gain.linearRampToValueAtTime(0, t0 + len);
+      master.connect(audio.destination);
+      const pure = btn.dataset.play === 'pure';
+      const freqs = pure ? [200] : [600, 800, 1000, 1200];
+      freqs.forEach(f => {
+        const o = audio.createOscillator();
+        const g = audio.createGain();
+        o.type = 'sine'; o.frequency.value = f; g.gain.value = pure ? 0.22 : 0.07;
+        o.connect(g); g.connect(master);
+        o.start(t0); o.stop(t0 + len + 0.05);
+        live.push(o);
+      });
+      btn.setAttribute('aria-pressed', 'true');
+      setTimeout(() => btn.setAttribute('aria-pressed', 'false'), (len + 0.1) * 1000);
+    });
+  });
+
+  // Copy the email address
+  const copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', () => {
+    const text = copyBtn.dataset.copy;
+    const done = ok => {
+      copyBtn.textContent = ok ? 'Copied' : 'Select and copy the address above';
+      setTimeout(() => { copyBtn.textContent = 'Copy email address'; }, 2200);
+    };
+    const fallback = () => {
+      const el = document.getElementById('email-text');
+      const r = document.createRange(); r.selectNodeContents(el);
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      done(false);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => done(true), fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
