@@ -735,9 +735,23 @@ dialog.contents::backdrop { background: rgba(10, 16, 26, 0.4); }
       </dl>
     </div>
     <div class="notes">
-      <p>Agents on AWS handle the cases, write into Salesforce over MCP, and use image checks to catch faked proof-of-recall photos. Evidence is archived automatically.</p>
+      <p>It started as a proof of value I built on my own in Copilot Studio, in under a week. Staff raised and managed recalls through an agent in Teams. A second agent checked a shopper’s product, barcode and batch code against the live recall list before it issued a voucher.</p>
+      <p>In production, agents on AWS handle the cases, write into Salesforce over MCP, and use image checks to catch faked proof-of-recall photos. Evidence is archived automatically.</p>
       <p class="stack"><b>Built with</b> LangGraph, Model Context Protocol, Salesforce and AWS</p>
     </div>
+  </div>
+</section>
+
+<section class="slide" id="w-copilot" data-section="B" data-title="Copilot Studio builds" aria-labelledby="t-copilot">
+  <div class="inner">
+    <h2 class="headline" id="t-copilot">Copilot Studio builds</h2>
+    <p class="lede">Agents I built at TQA on the Microsoft stack. Publishing each one to Teams turned a prototype into something colleagues could use within seconds.</p>
+    <ol class="cases">
+      <li><span class="yr">2025</span><h3>A recall proof of value for a major FMCG brand</h3><p>Two agents in under a week. Staff raise and manage recalls in Teams, and shoppers get a voucher only if the product, barcode and batch code all match a live recall. It became the production system. <a href="#w-recall">See the result</a></p></li>
+      <li><span class="yr">2024</span><h3>Product copy for the same brand</h3><p>Some well-known products had supermarket listings that said little more than what the product was. The agent rewrites them from the brand’s style guide, three strong examples, the terms shoppers search for and Google Trends, then says why it changed what it did.</p></li>
+      <li><span class="yr">2025</span><h3>Invoice to approved purchase order</h3><p>One agent reads a supplier invoice and asks for what’s missing, such as the approver, cost centre and GL account. It hands each line to a second agent, which logs it in SharePoint. The approver says yes or no in Teams, and the list updates.</p></li>
+    </ol>
+    <p class="stack"><b>Built with</b> Copilot Studio, Power Automate, SharePoint, Teams and GPT-4o</p>
   </div>
 </section>
 
